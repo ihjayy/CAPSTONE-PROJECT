@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AquaMonitor</title>
+
+    <link rel="stylesheet" href="/public/css/nav.css">
+    <link rel="stylesheet" href="/public/css/shared.css">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script defer src="/public/js/dashboard.js"></script>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">AquaMonitor</span>
+                </a>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="/public/index.html" class="nav-link">Home</a>
+                    <a href="/public/dashboard.html" class="nav-link active">Dashboard</a>
+                    <a href="/public/about.html" class="nav-link">About</a>
+                    <a href="/public/research.html" class="nav-link">Research</a>
+                    <a href="/public/fountains.html" class="nav-link">Fountain Status</a>
+                    <a href="/public/contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page-content">
+        <div class="container">
+            <div class="page-header">
+                <div class="page-title-wrapper">
+                    <div class="page-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1>Water Quality Dashboard</h1>
+                        <p>Real-time monitoring and analytics</p>
+                    </div>
+                </div>
+                <div class="last-updated">
+                    <div class="status-dot"></div>
+                    <span>Last updated: <span id="lastUpdated">Just now</span></span>
+                </div>
+            </div>
+
+            <!-- STATUS CARDS -->
+            <div class="dashboard-stats">
+                <div class="dashboard-card card-safe">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <div class="card-badge badge-safe">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Safe
+                        </div>
+                    </div>
+                    <h3>pH Level</h3>
+                    <div class="card-value">
+                        <span class="value">7.2</span>
+                        <span class="unit">pH</span>
+                    </div>
+                    <div class="card-trend">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m22 7-8.5 8.5-5-5L1 18"/>
+                        </svg>
+                        +0.1 from last hour
+                    </div>
+                </div>
+
+                <div class="dashboard-card card-safe">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <div class="card-badge badge-safe">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Safe
+                        </div>
+                    </div>
+                    <h3>Turbidity</h3>
+                    <div class="card-value">
+                        <span class="value">2.3</span>
+                        <span class="unit">NTU</span>
+                    </div>
+                    <div class="card-trend">
+                        Stable
+                    </div>
+                </div>
+
+                <div class="dashboard-card card-safe">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                            </svg>
+                        </div>
+                        <div class="card-badge badge-safe">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Safe
+                        </div>
+                    </div>
+                    <h3>Temperature</h3>
+                    <div class="card-value">
+                        <span class="value">24</span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="card-trend">
+                        -0.5°C from peak
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHARTS -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>pH Level Trend</h3>
+                    <canvas id="phChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Turbidity Levels</h3>
+                    <canvas id="turbidityChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Temperature Monitoring</h3>
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Multi-Parameter Overview</h3>
+                    <canvas id="multiChart"></canvas>
+                </div>
+            </div>
+
+            <!-- WATER QUALITY STANDARDS -->
+            <div class="standards-card">
+                <h3>Water Quality Standards</h3>
+                <div class="standards-grid">
+                    <div class="standard-item">
+                        <h4>pH Level</h4>
+                        <p>Safe Range: 6.5 - 8.5 pH</p>
+                        <p>Current: Within safe limits</p>
+                    </div>
+                    <div class="standard-item">
+                        <h4>Turbidity</h4>
+                        <p>Safe Range: < 5 NTU</p>
+                        <p>Current: Excellent clarity</p>
+                    </div>
+                    <div class="standard-item">
+                        <h4>Temperature</h4>
+                        <p>Safe Range: 15°C - 30°C</p>
+                        <p>Current: Optimal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <span>AquaMonitor</span>
+                    </div>
+                    <p>ESP32-Based Water Quality Monitoring System with Web Analytics</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>University</h3>
+                    <p>Our Lady of Fatima University<br>Antipolo Campus</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>capstone@fatima.edu.ph</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Our Lady of Fatima University. Capstone Project.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
